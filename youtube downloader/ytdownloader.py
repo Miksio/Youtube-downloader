@@ -33,19 +33,19 @@ def download_video():
     except Exception as e:
         messagebox.showerror("Błąd", str(e))
 
-# Ustawienie głównego okna aplikacji
+# main application window
 root = tk.Tk()
 root.title("Downloader filmów z YouTube")
 
-# Ustawienie etykiety
+# label
 label = tk.Label(root, text="Wprowadź URL filmu z YouTube:")
 label.pack(pady=10)
 
-# Ustawienie pola tekstowego
+#text field settings
 url_entry = tk.Entry(root, width=50)
 url_entry.pack(pady=5)
 
-# Ustawienie opcji formatu
+# format settings
 format_var = tk.StringVar()
 format_var.set("mp3")  # default value
 format_label = tk.Label(root, text="Wybierz format:")
@@ -55,9 +55,9 @@ for text, mode in formats:
     b = tk.Radiobutton(root, text=text, variable=format_var, value=mode)
     b.pack(anchor='w')
 
-# Ustawienie przycisku do pobierania
+# download button
 download_button = tk.Button(root, text="Pobierz", command=download_video)
 download_button.pack(pady=20)
 
-# Uruchomienie aplikacji
+
 root.mainloop()
